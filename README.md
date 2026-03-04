@@ -62,7 +62,7 @@ The model grid covers the following parameter space:
 | **Eq. Column Density** | $N_{H,eq}$ | $10^{21} - 5 \times 10^{25} \rm  \ cm^{-2}$ | Average equatorial column density. |
 | **Inclination** | $i$ | $0^\circ - 90^\circ$ | Viewing angle ($0^\circ$=Face-on/Type 1, $90^\circ$=Edge-on/Type 2). |
 | **Opening Angle** | $\Theta$ | $10^\circ - 80^\circ$ | Half-opening angle of the torus. |
-| **Dust density gradient** | $p$ | - | Radial gradient of the dust density distribution. |
+| **Dust density gradient** | $p$ | 0, 1 | Radial gradient of the dust density distribution. |
 
 ---
 
