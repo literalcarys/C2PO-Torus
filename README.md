@@ -59,13 +59,10 @@ The model grid covers the following parameter space:
 | Parameter | Symbol | Range | Description |
 | :--- | :---: | :--- | :--- |
 | **Photon Index** | $\Gamma$ | $1.4 - 2.6$ | Slope of the primary power law. |
-| **Eq. Column Density** | $N_{H,eq}$ | $10^{21} - 5 \times 10^{25}$ cm$^{-2}$ | Average equatorial column density. |
+| **Eq. Column Density** | $N_{H,eq}$ | $10^{21} - 5 \times 10^{25} \rm  \ cm^{-2}$ | Average equatorial column density. |
 | **Inclination** | $i$ | $0^\circ - 90^\circ$ | Viewing angle ($0^\circ$=Face-on/Type 1, $90^\circ$=Edge-on/Type 2). |
 | **Opening Angle** | $\Theta$ | $10^\circ - 80^\circ$ | Half-opening angle of the torus. |
-| **Redshift** | $z$ | - | Source redshift. |
-| **Normalization** | $norm$ | - | Normalization of the model. |
-
-*Note: Following SKIRTOR, the concentration parameter $p$ and polar gradient $q$ are fixed in the standard grid to optimize fitting efficiency.*
+| **Dust density gradient** | $p$ | - | Radial gradient of the dust density distribution. |
 
 ---
 
