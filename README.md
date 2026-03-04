@@ -35,11 +35,52 @@ The model assumes a clumpy wedge-shaped torus where dust is distributed between 
 
 ### 1. Download
 Download the XSPEC table models from the [models directory](./models) (Coming Soon):
-*   `C2POTorusD.fits`
-*   `C2POTorusR.fits`
+*   C2POTorusD.fits
+*   C2POTorusR.fits
 
 ### 2. Load into XSPEC
 Load the files as additive table models:
 
-```tcl
-XSPEC12> model atable{C2POTorusD.fits} + atable{C2POTorusR.fits}
+XSPEC12> model phabs * (atable{C2POTorusD.fits} + const*atable{C2POTorusR.fits})
+
+As described in Gilbert et al. (2026), the standard configuration in XSPEC contains the following:
+
+*   **phabs:** Galactic absorption.
+*   **const:** Scaling constant for the reprocessed component (can be fixed at 1 or left free).
+
+**Linking:** All physical parameters (Inclination, Opening Angle, etc.) should be tied between the D and R components during fitting.
+
+---
+
+## Parameters
+
+The model grid covers the following parameter space:
+
+| Parameter | Symbol | Range | Description |
+| :--- | :---: | :--- | :--- |
+| **Photon Index** | $\Gamma$ | $1.4 - 2.6$ | Slope of the primary power law. |
+| **Eq. Column Density** | $N_{H,eq}$ | $10^{21} - 5 \times 10^{25}$ cm$^{-2}$ | Average equatorial column density. |
+| **Inclination** | $i$ | $0^\circ - 90^\circ$ | Viewing angle ($0^\circ$=Face-on/Type 1, $90^\circ$=Edge-on/Type 2). |
+| **Opening Angle** | $\Theta$ | $10^\circ - 80^\circ$ | Half-opening angle of the torus. |
+| **Redshift** | $z$ | - | Source redshift. |
+| **Normalization** | $norm$ | - | Normalization of the model. |
+
+*Note: Following SKIRTOR, the concentration parameter $p$ and polar gradient $q$ are fixed in the standard grid to optimize fitting efficiency.*
+
+---
+
+## Citation
+
+If you use C2PO-Torus in your research, please cite the following paper:
+
+**A New Hope for AGN SED Fitting: X-Ray Spectral Analysis of 12MGS AGN with the C2PO-Torus Model**  
+*Carys J. E. Gilbert, Lucia Marchetti, Luigi Barchiesi, and Mattia Vaccari (2026)*  
+MNRAS (Preprint).
+
+
+## Contact
+
+For questions regarding the model or installation, please contact:
+**Carys J. E. Gilbert**  
+Department of Astronomy, University of Cape Town  
+Email: glbcar006@myuct.ac.za
